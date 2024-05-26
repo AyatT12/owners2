@@ -1,17 +1,32 @@
 !(function (l) {
+  // WOW active
+  new WOW().init();
   "use strict";
   if (window.innerWidth <= 767)
     {
       l("body").addClass("sidebar-toggled");
       l(".sidebar").addClass("toggled");
     }
-    if (window.innerWidth > 767)
-      {
+    setTimeout(function() {
+      if (window.innerWidth > 767) {
         l("body").toggleClass("sidebar-toggled");
         l(".sidebar").toggleClass("toggled");
       }
+    }, 100);
 
-  l("#sidebarToggle, #sidebarToggleTop").on("click", function (e) {
+    l("#sidebarToggle, #sidebarToggleTop").on("click", function (e) {
+      new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        offset: 0,
+        mobile: true,
+        live: true,
+        callback: function(box) {
+          if (l(box).closest('#accordionSidebar').length > 0) {
+            new WOW().init();
+          }
+        }
+      }).init();
     l("body").toggleClass("sidebar-toggled");
     l(".sidebar").toggleClass("toggled");
     if (l(".sidebar").hasClass("toggled")) {
@@ -59,6 +74,7 @@
   } else {
     Layer.classList.remove('layerStyle');
   }
+
 })(jQuery);
   
 
