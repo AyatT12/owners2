@@ -1961,7 +1961,7 @@ body.sidebar-toggled footer.sticky-footer {
         height: 100%;
         width: 17rem !important;
         position: fixed !important;
-        z-index: 9999;
+        z-index: 99999;
         transition: transform 0.3s ease-in-out !important;
         transform: translateX(0%) !important
     }
