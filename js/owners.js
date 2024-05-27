@@ -12,7 +12,7 @@
         l("body").toggleClass("sidebar-toggled");
         l(".sidebar").toggleClass("toggled");
       }
-    }, 100);
+    }, 500);
 
     l("#sidebarToggle, #sidebarToggleTop").on("click", function (e) {
       new WOW({
@@ -64,7 +64,7 @@
       Layer.classList.remove('layerStyle');
     }
   });
-
+ 
   const Layer = document.querySelector('.layer');
   const sidebar = document.querySelector('.sidebar');
   const isSideNavClosed = !sidebar.classList.contains('toggled');
